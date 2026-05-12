@@ -38,7 +38,7 @@ int main() {
   printf("ÁREA - Digite a área total da cidade 1, com aproximação de duas casas decimais (Ex: 1234.56): \n");
   scanf("%f", &areaA);
 
-  printf("PIB - Digite o PIB da cidade 1, apenas os dígitos dos bilhões: \n");
+  printf("PIB - Digite o PIB da cidade 1 em bilhões de reais, com aproximação de duas casas decimais: \n");
   scanf("%f", &pibA);
 
   printf("PTS TURÍSTICOS - Digite a quantidade de pontos turísticos da cidade 1: \n");
@@ -62,7 +62,7 @@ int main() {
   printf("ÁREA - Digite a área total da cidade 2, com aproximação de duas casas decimais (Ex: 1234,56): \n");
   scanf("%f", &areaB);
 
-  printf("PIB - Digite o PIB da cidade 2, apenas os dígitos dos bilhões: \n");
+  printf("PIB - Digite o PIB da cidade 2 em bilhões de reais, com aproximação de duas casas decimais: \n");
   scanf("%f", &pibB);
 
   printf("PTS TURÍSTICOS - Digite a quantidade de pontos turísticos da cidade 1: \n");
@@ -79,6 +79,10 @@ int main() {
   printf("Área: %.2fkm²\n",areaA);
   printf("PIB: %.2f bilhões de R$\n",pibA);
   printf("Número de pontos turísticos: %d\n",pt_turisticosA);
+  float dens_popA = populacaoA / areaA;
+  printf("Densidade populacional: %.2f hab/km²\n",dens_popA);
+  float pib_capitaA = (pibA * 1000000000) / populacaoA;
+  printf("PIB per capita: %.2f reais\n", pib_capitaA);
 
   printf("**CARTA 2**\n");
   printf("Estado: %c\n", estadoB);
@@ -88,7 +92,11 @@ int main() {
   printf("Área: %.2fkm²\n",areaB);
   printf("PIB: %.2f bilhões de R$\n",pibB);
   printf("Número de pontos turísticos: %d\n",pt_turisticosB);
-return 0;
+  float dens_popB = (float) populacaoB / areaB;
+  printf("Densidade populacional: %.2f hab/km²\n",dens_popB);
+  float pib_capitaB = (float) (pibB * 1000000000) / populacaoB;
+  printf("PIB per capita: %.2f reais\n", pib_capitaB);
+  return 0;
 
 
 } 
