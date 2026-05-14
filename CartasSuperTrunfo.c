@@ -73,7 +73,7 @@ int main() {
   printf("----INFORMAÇÕES DAS CARTAS----\n");
   printf("**CARTA 1**\n");
   printf("Estado: %c\n", estadoA);
-  printf("Código: %s\n", codigoA);
+  printf("Código: %c%s\n", estadoA, codigoA);
   printf("Nome da Cidade: %s\n", cidadeA);
   printf("População: %d habitantes\n",populacaoA);
   printf("Área: %.2fkm²\n",areaA);
@@ -83,10 +83,12 @@ int main() {
   printf("Densidade populacional: %.2f hab/km²\n",dens_popA);
   float pib_capitaA = (pibA * 1000000000) / populacaoA;
   printf("PIB per capita: %.2f reais\n", pib_capitaA);
+  float superpoderA = populacaoA + areaA + pibA + pt_turisticosA + pib_capitaA + (1/dens_popA);
+  printf("Super Poder: %.2f\n", superpoderA);
 
   printf("**CARTA 2**\n");
   printf("Estado: %c\n", estadoB);
-  printf("Código: %s\n", codigoB);
+  printf("Código: %c%s\n", estadoB, codigoB);
   printf("Nome da Cidade: %s\n", cidadeB);
   printf("População: %d habitantes\n",populacaoB);
   printf("Área: %.2fkm²\n",areaB);
@@ -96,6 +98,26 @@ int main() {
   printf("Densidade populacional: %.2f hab/km²\n",dens_popB);
   float pib_capitaB = (float) (pibB * 1000000000) / populacaoB;
   printf("PIB per capita: %.2f reais\n", pib_capitaB);
+  float superpoderB = populacaoB + areaB + pibB + pt_turisticosB + pib_capitaB + (1/dens_popB);
+  printf("Super Poder: %.2f\n", superpoderB);
+
+  printf("*** COMPARAÇÃO DAS CARTAS ***\n");
+  int resultado1 = populacaoA > populacaoB;
+  printf("População: Carta 1 venceu! (%d)\n", resultado1);
+  int resultado2 = areaA > areaB;
+  printf("Área: Carta 1 venceu! (%d)\n", resultado2);
+  int resultado3 = pibA > pibB;
+  printf("PIB: Carta 1 venceu! (%d)\n", resultado3);
+  int resultado4 = pt_turisticosA > pt_turisticosB;
+  printf("Pontos Turísticos: Carta 1 venceu! (%d)\n", resultado4);
+  int resultado5 = dens_popA < dens_popB;
+  printf("Densidade Populacional: Carta 2 venceu! (%d)\n", resultado5);
+  int resultado6 = pib_capitaA > pib_capitaB;
+  printf("PIB per Capita: Carta 1 venceu! (%d)\n", resultado6);
+  int resultado7 = superpoderA > superpoderB;
+  printf("Super Poder: Carta 1 venceu! (%d)\n", resultado7);
+
+  
   return 0;
 
 
